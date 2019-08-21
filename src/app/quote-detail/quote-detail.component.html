@@ -1,0 +1,10 @@
+<p class="txt">
+  Author :  {{quote.author}}
+</p>
+<p class="txt">
+  Published by  {{quote.user}}
+</p>
+<p class="txt"> This goal was published {{quote.completeDate|dateCount}} days ago</p>
+<app-like></app-like>
+<button class="btn btn-warning" (click)= 'goalComplete(true)'>Delete</button>
+

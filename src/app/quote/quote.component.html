@@ -1,0 +1,20 @@
+<div  class="bg panel-heading container">
+  
+    <h1>Quotes</h1>
+    <hr>
+    
+      <div class=" row">
+
+        <div  class="  col-md-6" >
+        <div *ngFor='let quote of quotes;let i = index'>
+            <p class="txt font-italic" appHighlight>"{{quote.quote}}"" </p>
+            <button class="btn btn-primary" (click)='toggleDetails(i)'>Show Info</button>
+            <app-quote-detail *ngIf='quote.showAuthor' [quote]='quote' (isComplete) = 'completeGoal($event,i)' [quote]="sortedQuote(i)"></app-quote-detail>
+          </div>
+        </div>
+          <div id="form" class="card col-md-6">
+            <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
+          </div>
+        </div>
+    
+  </div>
